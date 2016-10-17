@@ -61,4 +61,6 @@ Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
+# Unreal Assets
+Content/ArchVis/*
 Content/StarterContent/*

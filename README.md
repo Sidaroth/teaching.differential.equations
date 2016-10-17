@@ -6,3 +6,8 @@ This project is intended to be used as the development part of two research&deve
 Specifically for advanced project work, and my Master's Thesis. 
 
 Updates will come periodically. 
+
+## Assets used
+- Unreal Starter Content
+- https://docs.unrealengine.com/latest/INT/Resources/Showcases/RealisticRendering/
+
