@@ -10,4 +10,5 @@ Updates will come periodically.
 ## Assets used
 - Unreal Starter Content
 - https://docs.unrealengine.com/latest/INT/Resources/Showcases/RealisticRendering/
-
+- https://www.unrealengine.com/marketplace/ground-and-walls-texture-pack
+- https://www.unrealengine.com/marketplace/dynamic-clocks
