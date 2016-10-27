@@ -61,7 +61,8 @@ Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
-# Unreal Assets
+# Unreal Assets (Various sources)
 Content/ArchVis/*
 Content/StarterContent/*
 Content/DynamicClocks/*
+Content/mat_package/*
