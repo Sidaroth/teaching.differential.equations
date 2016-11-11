@@ -12,3 +12,4 @@ Updates will come periodically.
 - https://docs.unrealengine.com/latest/INT/Resources/Showcases/RealisticRendering/
 - https://www.unrealengine.com/marketplace/ground-and-walls-texture-pack
 - https://www.unrealengine.com/marketplace/dynamic-clocks
+- Third Person starter template mannequin
