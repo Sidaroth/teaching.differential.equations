@@ -38,6 +38,7 @@
 *.opensdf
 *.sdf
 *.VC.opendb
+*.VC.db
 
 # Precompiled Assets
 SourceArt/**/*.png
@@ -66,3 +67,4 @@ Content/ArchVis/*
 Content/StarterContent/*
 Content/DynamicClocks/*
 Content/mat_package/*
+Content/Mannequin/*

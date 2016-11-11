@@ -2,7 +2,10 @@
 
 #include "Titanium.h"
 #include "TitaniumGameMode.h"
+#include "GameHUD.h"
 
 
-
-
+ATitaniumGameMode::ATitaniumGameMode()
+{
+	HUDClass = AGameHUD::StaticClass();
+}

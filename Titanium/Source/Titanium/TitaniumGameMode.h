@@ -12,8 +12,5 @@ UCLASS()
 class TITANIUM_API ATitaniumGameMode : public AGameMode
 {
 	GENERATED_BODY()
-	
-	
-	
-	
+	ATitaniumGameMode();
 };
