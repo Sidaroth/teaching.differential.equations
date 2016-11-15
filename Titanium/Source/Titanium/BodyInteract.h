@@ -23,6 +23,8 @@ public:
 	// Called every frame
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
+	UPROPERTY(EditAnywhere)
+		bool DEBUG = true;
 		
 protected:
 	float Reach = 200.f;
@@ -31,7 +33,9 @@ protected:
 	AGameHUD* HUD = nullptr;
 
 	void SetupInputComponent();
-	void Measure();
+	void Interact();
+	void Measure(AActor*);
+	void Exit();
 
 	float VisibleFor = 2.0f;
 

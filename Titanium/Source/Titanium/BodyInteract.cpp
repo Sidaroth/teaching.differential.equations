@@ -28,29 +28,44 @@ void UBodyInteract::SetupInputComponent()
 {
 	InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
 	if (InputComponent) {
-		InputComponent->BindAction("Measure", IE_Pressed, this, &UBodyInteract::Measure);
+		InputComponent->BindAction("Interact", IE_Pressed, this, &UBodyInteract::Interact);
 	} else {
 		UE_LOG(LogTemp, Error, TEXT("%s missing input component"), *GetOwner()->GetName());
 	}
 }
 
-void UBodyInteract::Measure()
+
+void UBodyInteract::Measure(AActor* ActorHit)
+{
+	auto TemperatureComponent = (UTemperature*) ActorHit->GetComponentByClass(UTemperature::StaticClass());
+	if (TemperatureComponent) {
+		FString temperature = "Temperature is: ";
+		temperature.Append(FString::SanitizeFloat(TemperatureComponent->GetBodyTemperature()));
+		temperature.Append(" celsius.");
+
+		HUD->SetTemperatureString(temperature);
+		HUD->SetTemperatureVisibility(true);
+	}
+}
+
+void UBodyInteract::Exit()
+{
+
+}
+
+// Interact
+void UBodyInteract::Interact()
 {
 	auto HitResult = GetFirstPhysicsBodyInReach();
-	auto ComponentToGrab = HitResult.GetComponent();
 	auto ActorHit = HitResult.GetActor();
 	
 	if (ActorHit) {
-		UE_LOG(LogTemp, Warning, TEXT("Measure: %s"), *ActorHit->GetName());
-		
-		auto TemperatureComponent = (UTemperature*) ActorHit->GetComponentByClass(UTemperature::StaticClass());
-		if (TemperatureComponent) {
-			FString temperature = "Temperature is: ";
-			temperature.Append(FString::SanitizeFloat(TemperatureComponent->GetBodyTemperature()));
-			temperature.Append(" celsius.");
-
-			HUD->SetTemperatureString(temperature);
-			HUD->SetTemperatureVisibility(true);
+		UE_LOG(LogTemp, Warning, TEXT("Actor hit: %s"), *ActorHit->GetName())
+		if (ActorHit->GetName() == "DeadBody") {
+			Measure(ActorHit);
+		}
+		else if (ActorHit->GetName() == "ExitDoor") {
+			Exit();
 		}
 	}
 }
@@ -58,17 +73,20 @@ void UBodyInteract::Measure()
 /// Line-trace (Ray-cast) out to reach distance and return first physics body in reach, if any. 
 const FHitResult UBodyInteract::GetFirstPhysicsBodyInReach()
 {
-	DrawDebugLine(
-		GetWorld(),
-		GetReachLineStart(),
-		GetReachLineEnd(),
-		FColor(255, 0, 0),
-		false, 1, 0,
-		12.333
-	);
-
+	if (DEBUG) {
+		DrawDebugLine(
+			GetWorld(),
+			GetReachLineStart(),
+			GetReachLineEnd(),
+			FColor(255, 0, 0),
+			false, 1, 0,
+			12.333
+		);
+	}
+	
 	FHitResult HitResult;
 	FCollisionQueryParams TraceParameters(FName(TEXT("")), false, GetOwner());
+
 	GetWorld()->LineTraceSingleByObjectType(
 		OUT HitResult,
 		GetReachLineStart(),
