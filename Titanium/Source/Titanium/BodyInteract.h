@@ -24,7 +24,7 @@ public:
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
 	UPROPERTY(EditAnywhere)
-		bool DEBUG = true;
+		bool DEBUG = false;
 		
 protected:
 	float Reach = 200.f;
@@ -37,7 +37,7 @@ protected:
 	void Measure(AActor*);
 	void Exit();
 
-	float VisibleFor = 2.0f;
+	float VisibleFor = 4.0f;
 
 	// Return hit for first physics body in reach
 	const FHitResult GetFirstPhysicsBodyInReach();

@@ -21,6 +21,9 @@ public:
 	virtual void DrawHUD() override;
 	FString TemperatureString;
 	bool TemperatureVisible; 
+	
+	UPROPERTY(EditAnywhere)
+	FColor textColor;
 
 	void SetTemperatureString(FString);
 	void SetTemperatureVisibility(bool);

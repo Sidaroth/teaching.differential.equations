@@ -34,23 +34,21 @@ void UBodyInteract::SetupInputComponent()
 	}
 }
 
-
 void UBodyInteract::Measure(AActor* ActorHit)
 {
 	auto TemperatureComponent = (UTemperature*) ActorHit->GetComponentByClass(UTemperature::StaticClass());
 	if (TemperatureComponent) {
-		FString temperature = "Temperature is: ";
-		temperature.Append(FString::SanitizeFloat(TemperatureComponent->GetBodyTemperature()));
-		temperature.Append(" celsius.");
+		FString details = "Body height: 175cm.\nBody weight: 72kg.\nBody Temperature: ";
+		details.Append(FString::SanitizeFloat(TemperatureComponent->GetBodyTemperature()));
+		details.Append(" celsius.\n");
 
-		HUD->SetTemperatureString(temperature);
+		HUD->SetTemperatureString(details);
 		HUD->SetTemperatureVisibility(true);
 	}
 }
 
 void UBodyInteract::Exit()
 {
-
 }
 
 // Interact
@@ -61,10 +59,10 @@ void UBodyInteract::Interact()
 	
 	if (ActorHit) {
 		UE_LOG(LogTemp, Warning, TEXT("Actor hit: %s"), *ActorHit->GetName())
-		if (ActorHit->GetName() == "DeadBody") {
+		if (ActorHit->GetName() == "DeadBody1") {
 			Measure(ActorHit);
 		}
-		else if (ActorHit->GetName() == "ExitDoor") {
+		else if (ActorHit->GetName() == "ExitDoor1") {
 			Exit();
 		}
 	}
@@ -131,7 +129,7 @@ void UBodyInteract::TickComponent( float DeltaTime, ELevelTick TickType, FActorC
 	// Move to HUD
 	VisibleFor -= DeltaTime;
 	if (VisibleFor < 0) {
-		VisibleFor = 2.0f;
+		VisibleFor = 4.0f;
 		HUD->SetTemperatureVisibility(false);
 	}
 }

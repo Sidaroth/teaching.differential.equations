@@ -10,6 +10,7 @@ AGameHUD::AGameHUD() {
 	HUDFont = HUDFontObject.Object;
 	TemperatureVisible = false;
 	TemperatureString = "Temperature is NONE";
+	textColor = FColor(1.0f*255, 0.467832f*255, 0.49769f*255, 1.0f*255);
 }
 
 void AGameHUD::DrawHUD()
@@ -20,7 +21,8 @@ void AGameHUD::DrawHUD()
 	if (TemperatureVisible) {
 		FVector2D TextSize;
 		GetTextSize(TemperatureString, OUT TextSize.X, OUT TextSize.Y, HUDFont);
-		DrawText(TemperatureString, FColor::White, (ScreenDimensions.X - TextSize.X) / 2, (ScreenDimensions.Y - TextSize.Y) / 2, HUDFont);
+		DrawText(TemperatureString, FColor::Black, (ScreenDimensions.X - TextSize.X) / 2 + 1, (ScreenDimensions.Y - TextSize.Y) / 2 + 1, HUDFont); // Shadow
+		DrawText(TemperatureString, textColor, (ScreenDimensions.X - TextSize.X) / 2, (ScreenDimensions.Y - TextSize.Y) / 2, HUDFont);
 	}
 }
 
