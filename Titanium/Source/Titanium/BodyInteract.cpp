@@ -49,6 +49,10 @@ void UBodyInteract::Measure(AActor* ActorHit)
 
 void UBodyInteract::Exit()
 {
+	FString currentLevel = GetWorld()->GetMapName();
+	if (DEBUG) UE_LOG(LogTemp, Warning, TEXT("Level: %s"), *currentLevel);
+
+	UGameplayStatics::OpenLevel(GetWorld(), "SuspectLineup", false);
 }
 
 // Interact
@@ -58,7 +62,7 @@ void UBodyInteract::Interact()
 	auto ActorHit = HitResult.GetActor();
 	
 	if (ActorHit) {
-		UE_LOG(LogTemp, Warning, TEXT("Actor hit: %s"), *ActorHit->GetName())
+		if(DEBUG) UE_LOG(LogTemp, Warning, TEXT("Actor hit: %s"), *ActorHit->GetName())
 		if (ActorHit->GetName() == "DeadBody1") {
 			Measure(ActorHit);
 		}
