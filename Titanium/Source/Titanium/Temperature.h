@@ -21,7 +21,7 @@ public:
 	// Called every frame
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
-	UPROPERTY(EditAnywhere, meta = (DisplayName = "Body Temperature (C)", ClampMin = "20.0", ClampMax = "45.0", UIMin = "20.0", UIMax = "45.0"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (DisplayName = "Body Temperature (C)", ClampMin = "0.0", ClampMax = "45.0", UIMin = "0.0", UIMax = "45.0"))
 		float BodyTemperature = 37.0f;
 
 	void SetBodyTemperature(float);
