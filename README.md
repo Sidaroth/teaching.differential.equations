@@ -12,6 +12,7 @@ Updates will come periodically.
 - https://docs.unrealengine.com/latest/INT/Resources/Showcases/RealisticRendering/
 - https://www.unrealengine.com/marketplace/ground-and-walls-texture-pack
 - https://www.unrealengine.com/marketplace/dynamic-clocks
+- https://www.cgtrader.com/3d-models/electronics/phones-small-appliance/digital-room-thermometer
 - Third Person starter template mannequin
 
 As these assets are *not* pushed to the repository, to run this you will have to manually add them to the project (they are quite large). 
