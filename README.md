@@ -1,13 +1,13 @@
 # Titanium
-Codename Titanium - Serious Game for Understanding Higher Level Mathematical Concepts
+Codename Titanium - Serious Game supplementing higher level mathematical education.
 
 ## Work in Progress - Research Projects
-This project is intended to be used as the development part of two research&development projects at NTNU in Gjøvik, Norway.
+This project is intended to be used as the development part of two research & development projects at NTNU in Gjøvik, Norway.
 Specifically for advanced project work, and my Master's Thesis. 
 
 Updates will come periodically. 
 
-## Assets used
+## External Assets used
 - Unreal Starter Content
 - https://docs.unrealengine.com/latest/INT/Resources/Showcases/RealisticRendering/
 - https://www.unrealengine.com/marketplace/ground-and-walls-texture-pack
