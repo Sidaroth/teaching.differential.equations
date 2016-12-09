@@ -13,3 +13,5 @@ Updates will come periodically.
 - https://www.unrealengine.com/marketplace/ground-and-walls-texture-pack
 - https://www.unrealengine.com/marketplace/dynamic-clocks
 - Third Person starter template mannequin
+
+As these assets are *not* pushed to the repository, to run this you will have to manually add them to the project (they are quite large). 
