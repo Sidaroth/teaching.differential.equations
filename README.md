@@ -10,8 +10,6 @@ To validate our design decisions and get feedback from target audience members, 
 This project is intended to be used as the development part of two research & development projects at NTNU in Gjøvik, Norway.
 Specifically for advanced project work, and my Master's Thesis. 
 
-Updates will come periodically. Expect major refactoring in the near future. 
-
 ## External Assets used
 - Unreal Starter Content
 - https://docs.unrealengine.com/latest/INT/Resources/Showcases/RealisticRendering/
