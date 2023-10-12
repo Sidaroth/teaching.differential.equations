@@ -1,5 +1,5 @@
-# Titanium
-Codename Titanium - Serious Game supplementing higher level mathematical education.
+# Teaching Differential Equations
+Serious Game supplementing higher level mathematical education.
 
 ## Preliminary Research and Planning
 A detailed project plan for the master thesis can be seen and read in "Detailed Project plan.pdf". This report was written for the class on "Research Project Planning" at NTNU in Gjøvik, and describes the plan of action for this project for the next 6 months or so.
